@@ -420,6 +420,7 @@ void compileIfSt(void) {
 
 void compileElseSt(void) {
   eat(KW_ELSE);
+  eat(KW_RETURN);
   compileStatement();
 }
 
