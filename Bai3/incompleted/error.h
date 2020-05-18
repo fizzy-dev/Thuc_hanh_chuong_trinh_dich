@@ -11,6 +11,7 @@
 typedef enum {
   ERR_ENDOFCOMMENT,
   ERR_IDENTTOOLONG,
+  ERR_NUMBERTOOLONG,
   ERR_INVALIDCHARCONSTANT,
   ERR_INVALIDSYMBOL,
   ERR_INVALIDCONSTANT,
@@ -22,16 +23,13 @@ typedef enum {
   ERR_INVALIDCOMPARATOR,
   ERR_INVALIDEXPRESSION,
   ERR_INVALIDTERM,
-  ERR_INVALIDFACTOR,
-  ERR_INVALIDCONSTDECL,
-  ERR_INVALIDTYPEDECL,
-  ERR_INVALIDVARDECL,
-  ERR_INVALIDSUBDECL,
+  ERR_INVALIDFACTOR
 } ErrorCode;
 
 
 #define ERM_ENDOFCOMMENT "End of comment expected!"
 #define ERM_IDENTTOOLONG "Identification too long!"
+#define ERM_NUMBERTOOLONG "Number too long!"
 #define ERM_INVALIDCHARCONSTANT "Invalid const char!"
 #define ERM_INVALIDSYMBOL "Invalid symbol!"
 #define ERM_INVALIDCONSTANT "Invalid constant!"
@@ -44,10 +42,6 @@ typedef enum {
 #define ERM_INVALIDEXPRESSION "Invalid expression!"
 #define ERM_INVALIDTERM "Invalid term!"
 #define ERM_INVALIDFACTOR "Invalid factor!"
-#define ERM_INVALIDCONSTDECL "Invalid constant declaration!"
-#define ERM_INVALIDTYPEDECL "Invalid type declaration!"
-#define ERM_INVALIDVARDECL "Invalid variable declaration!"
-#define ERM_INVALIDSUBDECL "Invalid subroutine declaration!"
 
 void error(ErrorCode err, int lineNo, int colNo);
 void missingToken(TokenType tokenType, int lineNo, int colNo);

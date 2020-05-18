@@ -13,6 +13,9 @@ void error(ErrorCode err, int lineNo, int colNo) {
   case ERR_ENDOFCOMMENT:
     printf("%d-%d:%s\n", lineNo, colNo, ERM_ENDOFCOMMENT);
     break;
+  case ERR_NUMBERTOOLONG:
+    printf("%d-%d:%s\n", lineNo, colNo, ERM_NUMBERTOOLONG);
+    break;
   case ERR_IDENTTOOLONG:
     printf("%d-%d:%s\n", lineNo, colNo, ERM_IDENTTOOLONG);
     break;
@@ -52,20 +55,8 @@ void error(ErrorCode err, int lineNo, int colNo) {
   case ERR_INVALIDFACTOR:
     printf("%d-%d:%s\n", lineNo, colNo, ERM_INVALIDFACTOR);
     break;
-  case ERR_INVALIDCONSTDECL:
-    printf("%d-%d:%s\n", lineNo, colNo, ERM_INVALIDCONSTDECL);
-    break;
-  case ERR_INVALIDTYPEDECL:
-    printf("%d-%d:%s\n", lineNo, colNo, ERM_INVALIDTYPEDECL);
-    break;
-  case ERR_INVALIDVARDECL:
-    printf("%d-%d:%s\n", lineNo, colNo, ERM_INVALIDVARDECL);
-    break;
-  case ERR_INVALIDSUBDECL:
-    printf("%d-%d:%s\n", lineNo, colNo, ERM_INVALIDSUBDECL);
-    break;
   }
-  exit(0);
+  exit(-1);
 }
 
 void missingToken(TokenType tokenType, int lineNo, int colNo) {

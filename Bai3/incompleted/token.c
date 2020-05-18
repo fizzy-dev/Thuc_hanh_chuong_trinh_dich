@@ -17,6 +17,7 @@ struct {
   {"TYPE", KW_TYPE},
   {"VAR", KW_VAR},
   {"INTEGER", KW_INTEGER},
+  {"FLOAT", KW_FLOAT},
   {"CHAR", KW_CHAR},
   {"ARRAY", KW_ARRAY},
   {"OF", KW_OF},
@@ -31,8 +32,7 @@ struct {
   {"WHILE", KW_WHILE},
   {"DO", KW_DO},
   {"FOR", KW_FOR},
-  {"TO", KW_TO},
-  {"RETURN", KW_RETURN}
+  {"TO", KW_TO}
 };
 
 int keywordEq(char *kw, char *string) {
@@ -87,8 +87,6 @@ char *tokenToString(TokenType tokenType) {
   case KW_DO: return "keyword DO";
   case KW_FOR: return "keyword FOR";
   case KW_TO: return "keyword TO";
-
-  case KW_RETURN: return "keyword RETURN";
 
   case SB_SEMICOLON: return "\';\'";
   case SB_COLON: return "\':\'";
